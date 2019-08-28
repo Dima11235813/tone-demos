@@ -1,7 +1,5 @@
-tone-oscilloscope {
-    width: 100%;
-    background-color: black;
-    height: 40px;
-    border-radius: 20px;
-    margin-bottom: 10px;
+body{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
 }
+

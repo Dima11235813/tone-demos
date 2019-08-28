@@ -1,47 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/13.3.1/Tone.min.js"></script>
+        <script src="./toneJs-ui.js"></script>
     <link rel="stylesheet" href="./index.css">
 
     <title>Document</title>
 </head>
 
-<body>
+<body >
+    	<style type="text/css">
+            tone-oscilloscope {
+                width: 100%;
+                background-color: black;
+                height: 40px;
+                border-radius: 20px;
+                margin-bottom: 10px;
+            }
+        </style>
+        <!-- <tone-example> -->
+            <tone-explanation label="Microphone">
+                If supported, Tone.UserMedia uses <code>getUserMedia</code> to open the user's microphone where it can then be processed with Tone.js. Only works on https domains.
+            </tone-explanation>
+    
+            <tone-content>
+                <tone-oscilloscope></tone-oscilloscope>
+                <tone-microphone></tone-microphone>
+            </tone-content>
+        <!-- </tone-example> -->
+        
+        <script type="text/javascript">
+            //you probably DONT want to connect the microphone
+            //directly to the master output because of feedback.
+            var mic = new Tone.UserMedia();
+    
+            //bind the interface
+            document.querySelector("tone-microphone").bind(mic);
+            document.querySelector("tone-oscilloscope").bind(mic);
+    
+        </script>
     <tone-example>
+
         <tone-explanation label="Microphone">
             If supported, Tone.UserMedia uses <code>getUserMedia</code> to open the user's microphone where it can then
             be processed with Tone.js. Only works on https domains.
         </tone-explanation>
-
         <tone-content>
             <tone-oscilloscope></tone-oscilloscope>
             <tone-microphone></tone-microphone>
         </tone-content>
     </tone-example>
+
     <audio controls></audio>
 
-    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@^2/webcomponents-bundle.js"></script>
+    <!-- <script src="https://unpkg.com/@webcomponents/webcomponentsjs@^2/webcomponents-bundle.js"></script>
     <script src="https://unpkg.com/tone"></script>
-    <script src="https://unpkg.com/@tonejs/ui"></script>
+    <script src="https://unpkg.com/@tonejs/ui"></script> -->
     <script src="./index.js"></script>
-    <script type="text/javascript">
 
-    </script>
-    <tone-example>
-        <tone-loader></tone-loader>
+    <tone-loader></tone-loader>
 
-        <tone-explanation label="Player">
-        </tone-explanation>
-
-        <tone-content>
-            <tone-play-toggle></tone-play-toggle>
-            <tone-player></tone-player>
-        </tone-content>
-    </tone-example>
+    <tone-content>
+        <tone-play-toggle></tone-play-toggle>
+        <tone-player></tone-player>
+    </tone-content>
 
 </body>
 
