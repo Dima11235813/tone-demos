@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./index.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <tone-example>
+        <tone-explanation label="Microphone">
+            If supported, Tone.UserMedia uses <code>getUserMedia</code> to open the user's microphone where it can then
+            be processed with Tone.js. Only works on https domains.
+        </tone-explanation>
+
+        <tone-content>
+            <tone-oscilloscope></tone-oscilloscope>
+            <tone-microphone></tone-microphone>
+        </tone-content>
+    </tone-example>
+    <audio controls></audio>
+
+    <script src="https://unpkg.com/@webcomponents/webcomponentsjs@^2/webcomponents-bundle.js"></script>
+    <script src="https://unpkg.com/tone"></script>
+    <script src="https://unpkg.com/@tonejs/ui"></script>
+    <script src="./index.js"></script>
+    <script type="text/javascript">
+
+    </script>
+    <tone-example>
+        <tone-loader></tone-loader>
+
+        <tone-explanation label="Player">
+        </tone-explanation>
+
+        <tone-content>
+            <tone-play-toggle></tone-play-toggle>
+            <tone-player></tone-player>
+        </tone-content>
+    </tone-example>
+
+</body>
+
+</html>
